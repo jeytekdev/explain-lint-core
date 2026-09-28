@@ -1,0 +1,58 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use ExplainLint\Console\CheckCommand;
+use ExplainLint\Console\InstallCommand;
+use Symfony\Component\Console\Application;
+
+(static function (): void {
+    $candidates = [];
+
+    // PHP resolves __FILE__/__DIR__ *through* symlinks. That's fine for a
+    // normally-downloaded dependency, but breaks when this package is
+    // installed via a Composer `path` repository (common for local
+    // development): `vendor/jeytekdev/explain-lint` is itself a symlink to
+    // the original source tree, so __DIR__ ends up pointing at that source
+    // tree instead of anywhere near the project's real `vendor/` directory.
+    //
+    // $argv[0], by contrast, is the literal string used to invoke this
+    // script (e.g. "vendor/bin/explain-lint" or "src/vendor/bin/explain-lint")
+    // and is never symlink-resolved — it reflects where `vendor/bin/`
+    // actually lives regardless of how the package itself got installed.
+    // This is checked first since it is the reliable signal; the fixed-depth
+    // __DIR__ guesses below are a fallback for direct/uncommon invocations.
+    $invokedAs = $_SERVER['argv'][0] ?? null;
+    if (is_string($invokedAs) && $invokedAs !== '') {
+        $invokedDir = dirname($invokedAs);
+        $isAbsolute = str_starts_with($invokedDir, '/') || preg_match('#^[A-Za-z]:[\\\\/]#', $invokedDir) === 1;
+        if (!$isAbsolute) {
+            $invokedDir = rtrim(getcwd() ?: '.', '/\\') . '/' . $invokedDir;
+        }
+        $candidates[] = $invokedDir . '/../autoload.php'; // vendor/bin/explain-lint -> vendor/autoload.php
+    }
+
+    $candidates[] = __DIR__ . '/../../../autoload.php';    // installed as a dependency: vendor/jeytekdev/explain-lint/bin/..
+    $candidates[] = __DIR__ . '/../vendor/autoload.php';   // running from the package checkout itself
+    $candidates[] = __DIR__ . '/../../../../autoload.php'; // installed inside the monorepo dev root
+
+    foreach ($candidates as $autoload) {
+        $resolved = realpath($autoload);
+        if ($resolved !== false && is_file($resolved)) {
+            require $resolved;
+
+            return;
+        }
+    }
+
+    fwrite(STDERR, "Could not locate the Composer autoloader. Run `composer install` first.\n");
+    exit(1);
+})();
+
+$application = new Application('explain-lint', 'dev');
+$application->addCommands([
+    new InstallCommand(),
+    new CheckCommand(),
+]);
+$application->run();

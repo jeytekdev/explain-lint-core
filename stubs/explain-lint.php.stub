@@ -1,0 +1,73 @@
+<?php
+
+declare(strict_types=1);
+
+// explain-lint configuration.
+// Docs: https://github.com/jeytekdev/explain-lint#configuration
+
+return [
+    // 'warn'   — violations are printed/annotated but the build stays green.
+    // 'strict' — violations at severity "error" fail the run.
+    'mode' => $_ENV['EXPLAIN_LINT_MODE'] ?? 'warn',
+
+    'connections' => [
+        'default' => [
+            'driver' => 'mysql', // 'mysql' | 'pgsql'
+
+            // Per-rule mode overrides the global 'mode' above for this connection.
+            // Allowed values: 'off' | 'warn' | 'strict'.
+            'rules' => [
+                'full_table_scan' => 'strict',
+                'no_index_available' => 'strict',
+                'index_rejected' => 'warn',
+                'filesort' => 'warn',
+                'temporary_table' => 'warn',
+                'high_row_estimate' => 'warn',
+            ],
+
+            // Row estimate above which HIGH_ROW_ESTIMATE fires.
+            'row_estimate_threshold' => 1000,
+
+            // Table-size tiering thresholds (approximate row counts).
+            // Scan-related rules never fire on "tiny" tables, and only fire
+            // on "small" tables when the query has a selective predicate.
+            'table_size_tiers' => [
+                'tiny' => 100,
+                'small' => 1000,
+            ],
+        ],
+    ],
+
+    // Table name => reason. Required non-empty reason so allowlisting a table
+    // doesn't rot silently.
+    'allowlist' => [
+        // 'audit_log' => 'Intentional full scan for the nightly export job — JIRA-123',
+    ],
+
+    // Query fingerprint (sha1) => reason. Copy the fingerprint from the
+    // "Fingerprint" column of the console report for the violation you want
+    // to silence.
+    'allowlist_fingerprints' => [
+        // 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3' => 'Known slow report query — JIRA-456',
+    ],
+
+    // Queries matching any of these regexes are never analyzed.
+    'ignore_queries' => [
+        '/^\s*(CREATE|ALTER|DROP)\s/i',
+    ],
+
+    // Queries executed from files under these paths (relative to the project
+    // root, glob syntax) are never analyzed — e.g. migrations/seeders.
+    'ignore_paths' => [
+        'database/migrations/*',
+        'database/seeders/*',
+    ],
+
+    'report' => [
+        'console' => true,
+        // Absolute or relative path to write a JUnit-style XML report, or null to disable.
+        'junit' => null,
+        // 'auto' emits GitHub Actions annotations only when GITHUB_ACTIONS=true.
+        'github_annotations' => 'auto',
+    ],
+];
