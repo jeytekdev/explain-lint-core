@@ -19,16 +19,27 @@ final class InstallCommand extends Command
             ->setName('explain-lint:install')
             ->setDescription('Registers the ExplainLintExtension in phpunit.xml and creates explain-lint.php.')
             ->addOption('phpunit-config', null, InputOption::VALUE_REQUIRED, 'Path to phpunit.xml', 'phpunit.xml')
-            ->addOption('config', null, InputOption::VALUE_REQUIRED, 'Path to create explain-lint.php at', 'explain-lint.php');
+            ->addOption('config', null, InputOption::VALUE_REQUIRED, 'Path to create explain-lint.php at', 'explain-lint.php')
+            ->addOption(
+                'config-only',
+                null,
+                InputOption::VALUE_NONE,
+                'Only create explain-lint.php, skip registering the PHPUnit extension in phpunit.xml — for '
+                . 'Codeception projects (jeytekdev/explain-lint-codeception), where phpunit.xml is never read '
+                . 'and registering the extension there is a no-op.'
+            );
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $cwd = getcwd() ?: '.';
-        $phpunitConfigPath = $this->resolve($cwd, (string) $input->getOption('phpunit-config'));
         $configPath = $this->resolve($cwd, (string) $input->getOption('config'));
 
-        $this->installPhpunitExtension($phpunitConfigPath, $output);
+        if (!$input->getOption('config-only')) {
+            $phpunitConfigPath = $this->resolve($cwd, (string) $input->getOption('phpunit-config'));
+            $this->installPhpunitExtension($phpunitConfigPath, $output);
+        }
+
         $this->createConfigFile($configPath, $output);
 
         return Command::SUCCESS;

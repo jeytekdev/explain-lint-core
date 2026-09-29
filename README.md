@@ -115,8 +115,9 @@ Table sizes are read from `information_schema.TABLES.TABLE_ROWS` (MySQL) or `pg_
 ## CLI
 
 ```bash
-vendor/bin/explain-lint explain-lint:install   # wires up phpunit.xml + explain-lint.php
-vendor/bin/explain-lint explain-lint:check     # reads the last JUnit report, fails if mode=strict and it has error-severity violations
+vendor/bin/explain-lint explain-lint:install                 # wires up phpunit.xml + explain-lint.php
+vendor/bin/explain-lint explain-lint:install --config-only   # only creates explain-lint.php — for Codeception projects, see jeytekdev/explain-lint-codeception
+vendor/bin/explain-lint explain-lint:check                   # reads the last JUnit report, fails if mode=strict and it has error-severity violations
 ```
 
 `explain-lint:check` exists as a reliable second CI step — relying solely on the in-process `exit(1)` from PHPUnit's `TestRunner\ExecutionFinished` event is a single point of failure if something in your CI pipeline swallows PHPUnit's exit code.
