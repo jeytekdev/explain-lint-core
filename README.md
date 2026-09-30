@@ -24,9 +24,9 @@ composer require --dev jeytekdev/explain-lint
 
 Pick the guide for your stack:
 
-- [Laravel](../laravel/README.md) — `jeytekdev/explain-lint-laravel`
-- [Symfony / Doctrine DBAL](../doctrine/README.md) — `jeytekdev/explain-lint-doctrine`
-- [Yii2](../yii2/README.md) — `jeytekdev/explain-lint-yii2`
+- [Laravel](https://github.com/jeytekdev/explain-lint/blob/master/packages/laravel/README.md) — `jeytekdev/explain-lint-laravel`
+- [Symfony / Doctrine DBAL](https://github.com/jeytekdev/explain-lint/blob/master/packages/doctrine/README.md) — `jeytekdev/explain-lint-doctrine`
+- [Yii2](https://github.com/jeytekdev/explain-lint/blob/master/packages/yii2/README.md) — `jeytekdev/explain-lint-yii2`
 - Bare PDO (below)
 
 ### Bare PDO, 2 minutes
@@ -56,7 +56,7 @@ vendor/bin/explain-lint explain-lint:install
 
 This works for [Pest](https://pestphp.com) too, with zero extra glue — Pest runs on the same PHPUnit event bus.
 
-Running your suite via `vendor/bin/codecept run` instead? Codeception 5 never bootstraps the `<extensions>` mechanism above, so this registration is a no-op there — install [`jeytekdev/explain-lint-codeception`](../codeception/README.md) instead and register it in `codeception.yml`.
+Running your suite via `vendor/bin/codecept run` instead? Codeception 5 never bootstraps the `<extensions>` mechanism above, so this registration is a no-op there — install [`jeytekdev/explain-lint-codeception`](https://github.com/jeytekdev/explain-lint/blob/master/packages/codeception/README.md) instead and register it in `codeception.yml`.
 
 ## Configuration
 
@@ -130,13 +130,13 @@ vendor/bin/explain-lint explain-lint:check                   # reads the last JU
 - run: vendor/bin/explain-lint explain-lint:check
 ```
 
-Running your suite via `vendor/bin/codecept run` instead of `vendor/bin/phpunit`/`pest`? The extension above is never invoked — Codeception 5 doesn't bootstrap PHPUnit's native extension mechanism. See [`jeytekdev/explain-lint-codeception`](../codeception/README.md).
+Running your suite via `vendor/bin/codecept run` instead of `vendor/bin/phpunit`/`pest`? The extension above is never invoked — Codeception 5 doesn't bootstrap PHPUnit's native extension mechanism. See [`jeytekdev/explain-lint-codeception`](https://github.com/jeytekdev/explain-lint/blob/master/packages/codeception/README.md).
 
 ## Scope of this release
 
 Implemented: MySQL/MariaDB + PostgreSQL adapters, PHPUnit 10/11 (and Pest) integration, console/JUnit/GitHub Actions reporting, Laravel/Doctrine/Yii2 bridges.
 
-Not implemented yet (see [CONTRIBUTING.md](../../CONTRIBUTING.md) — good first issues):
+Not implemented yet (see [CONTRIBUTING.md](https://github.com/jeytekdev/explain-lint/blob/master/CONTRIBUTING.md) — good first issues):
 
 - SQLite — currently a no-op adapter that always passes.
 - `EXPLAIN ANALYZE` mode with real row counts (`ExplainMode` has the extension point).
