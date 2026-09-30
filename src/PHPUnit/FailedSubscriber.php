@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\PHPUnit;
+namespace Jeytekdev\ExplainLint\PHPUnit;
 
 use PHPUnit\Event\Test\Failed;
 use PHPUnit\Event\Test\FailedSubscriber as FailedSubscriberInterface;

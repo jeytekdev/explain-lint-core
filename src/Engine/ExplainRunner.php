@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Engine;
+namespace Jeytekdev\ExplainLint\Engine;
 
-use ExplainLint\Adapter\ExplainAdapter;
-use ExplainLint\Recorder\CapturedQuery;
+use Jeytekdev\ExplainLint\Adapter\ExplainAdapter;
+use Jeytekdev\ExplainLint\Recorder\CapturedQuery;
 
 /**
  * Runs EXPLAIN for a captured query on the exact same PDO connection/session

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Recorder;
+namespace Jeytekdev\ExplainLint\Recorder;
 
 /**
  * Tracks which query fingerprints have already been sent through EXPLAIN

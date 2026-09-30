@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Adapter;
+namespace Jeytekdev\ExplainLint\Adapter;
 
-use ExplainLint\ReasonCode;
+use Jeytekdev\ExplainLint\ReasonCode;
 
 /**
  * A raw candidate problem read directly off one EXPLAIN plan node, before

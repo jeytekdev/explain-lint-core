@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Tests\Integration;
+namespace Jeytekdev\ExplainLint\Tests\Integration;
 
-use ExplainLint\Adapter\PostgresAdapter;
-use ExplainLint\Config\Config;
-use ExplainLint\Engine\ExplainRunner;
-use ExplainLint\Fingerprint\SqlFingerprint;
-use ExplainLint\Recorder\CapturedQuery;
-use ExplainLint\Recorder\QueryPhase;
-use ExplainLint\Rules\RuleEngine;
+use Jeytekdev\ExplainLint\Adapter\PostgresAdapter;
+use Jeytekdev\ExplainLint\Config\Config;
+use Jeytekdev\ExplainLint\Engine\ExplainRunner;
+use Jeytekdev\ExplainLint\Fingerprint\SqlFingerprint;
+use Jeytekdev\ExplainLint\Recorder\CapturedQuery;
+use Jeytekdev\ExplainLint\Recorder\QueryPhase;
+use Jeytekdev\ExplainLint\Rules\RuleEngine;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -102,7 +102,7 @@ final class PostgresIntegrationTest extends TestCase
         $this->pdo->exec('DROP TABLE el_no_index');
     }
 
-    private function evaluate(string $sql): \ExplainLint\Verdict
+    private function evaluate(string $sql): \Jeytekdev\ExplainLint\Verdict
     {
         $query = new CapturedQuery($sql, [], $this->pdo, 'default', QueryPhase::Test);
         $outcome = $this->runner->run($query);

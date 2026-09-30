@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint;
+namespace Jeytekdev\ExplainLint;
 
 enum ReasonCode: string
 {

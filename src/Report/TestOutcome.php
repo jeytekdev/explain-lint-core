@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Report;
+namespace Jeytekdev\ExplainLint\Report;
 
-use ExplainLint\Violation;
+use Jeytekdev\ExplainLint\Violation;
 
 final class TestOutcome
 {

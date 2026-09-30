@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Adapter;
+namespace Jeytekdev\ExplainLint\Adapter;
 
 /**
  * SQLite is out of scope for v1 (see roadmap in README/CONTRIBUTING) — its

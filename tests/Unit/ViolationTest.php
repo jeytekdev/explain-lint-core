@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Tests\Unit;
+namespace Jeytekdev\ExplainLint\Tests\Unit;
 
-use ExplainLint\ReasonCode;
-use ExplainLint\Severity;
-use ExplainLint\Violation;
+use Jeytekdev\ExplainLint\ReasonCode;
+use Jeytekdev\ExplainLint\Severity;
+use Jeytekdev\ExplainLint\Violation;
 use PHPUnit\Framework\TestCase;
 
 final class ViolationTest extends TestCase

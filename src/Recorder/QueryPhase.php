@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Recorder;
+namespace Jeytekdev\ExplainLint\Recorder;
 
 /**
  * Which lifecycle phase of a test a captured query belongs to. Only

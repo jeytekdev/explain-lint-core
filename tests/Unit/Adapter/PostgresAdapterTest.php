@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Tests\Unit\Adapter;
+namespace Jeytekdev\ExplainLint\Tests\Unit\Adapter;
 
-use ExplainLint\Adapter\PostgresAdapter;
-use ExplainLint\ReasonCode;
+use Jeytekdev\ExplainLint\Adapter\PostgresAdapter;
+use Jeytekdev\ExplainLint\ReasonCode;
 use PHPUnit\Framework\TestCase;
 
 final class PostgresAdapterTest extends TestCase

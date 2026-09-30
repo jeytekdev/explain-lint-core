@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\PHPUnit;
+namespace Jeytekdev\ExplainLint\PHPUnit;
 
-use ExplainLint\Recorder\QueryPhase;
-use ExplainLint\Recorder\QueryRecorder;
+use Jeytekdev\ExplainLint\Recorder\QueryPhase;
+use Jeytekdev\ExplainLint\Recorder\QueryRecorder;
 use PHPUnit\Event\Test\PreparationStarted;
 use PHPUnit\Event\Test\PreparationStartedSubscriber as PreparationStartedSubscriberInterface;
 

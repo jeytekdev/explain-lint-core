@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Pdo;
+namespace Jeytekdev\ExplainLint\Pdo;
 
-use ExplainLint\Recorder\CapturedQuery;
-use ExplainLint\Recorder\QueryRecorder;
+use Jeytekdev\ExplainLint\Recorder\CapturedQuery;
+use Jeytekdev\ExplainLint\Recorder\QueryRecorder;
 
 /**
  * Decorator around a real \PDOStatement. Composition instead of inheritance

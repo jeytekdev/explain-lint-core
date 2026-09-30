@@ -3,8 +3,8 @@
 
 declare(strict_types=1);
 
-use ExplainLint\Console\CheckCommand;
-use ExplainLint\Console\InstallCommand;
+use Jeytekdev\ExplainLint\Console\CheckCommand;
+use Jeytekdev\ExplainLint\Console\InstallCommand;
 use Symfony\Component\Console\Application;
 
 (static function (): void {

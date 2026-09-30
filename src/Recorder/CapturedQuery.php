@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Recorder;
+namespace Jeytekdev\ExplainLint\Recorder;
 
 /**
  * An SQL statement observed by one of the capture adapters (ExplainLintPdo,

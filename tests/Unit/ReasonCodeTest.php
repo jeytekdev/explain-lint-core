@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Tests\Unit;
+namespace Jeytekdev\ExplainLint\Tests\Unit;
 
-use ExplainLint\ReasonCode;
+use Jeytekdev\ExplainLint\ReasonCode;
 use PHPUnit\Framework\TestCase;
 
 final class ReasonCodeTest extends TestCase

@@ -2,6 +2,8 @@
 
 Re-runs `EXPLAIN` against every SQL query captured during your test suite, and fails the build when a query does a full table scan, loses an index, or needs a filesort/temporary table.
 
+> **Upgrading from v1.x?** The PHP namespace changed from `ExplainLint\...` to `Jeytekdev\ExplainLint\...` in v2.0.0 — see the [root README's upgrade notes](https://github.com/jeytekdev/explain-lint#upgrading-to-v20).
+
 ## Why
 
 N+1 detectors (`beyondcode/laravel-query-detector` and friends) catch too many *similar* queries in one request — they say nothing about a single query that's structurally bad. A full table scan on a large table, or an index quietly dropped by a migration, executes exactly once per test and sails straight through an N+1 check. It only shows up later, as a production slowdown.
@@ -32,7 +34,7 @@ Pick the guide for your stack:
 ### Bare PDO, 2 minutes
 
 ```php
-use ExplainLint\Pdo\ExplainLintPdo;
+use Jeytekdev\ExplainLint\Pdo\ExplainLintPdo;
 
 $pdo = new ExplainLintPdo('mysql:host=127.0.0.1;dbname=app_test', 'root', '', null, connectionName: 'default');
 ```
@@ -42,7 +44,7 @@ Use `$pdo` exactly like a normal `PDO` instance (`instanceof \PDO` will be `fals
 ```xml
 <!-- phpunit.xml -->
 <extensions>
-    <bootstrap class="ExplainLint\PHPUnit\ExplainLintExtension">
+    <bootstrap class="Jeytekdev\ExplainLint\PHPUnit\ExplainLintExtension">
         <parameter name="config" value="explain-lint.php"/>
     </bootstrap>
 </extensions>

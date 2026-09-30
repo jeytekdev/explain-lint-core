@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\PHPUnit;
+namespace Jeytekdev\ExplainLint\PHPUnit;
 
-use ExplainLint\Engine\ExplainRunner;
-use ExplainLint\Fingerprint\SqlFingerprint;
-use ExplainLint\Recorder\QueryLedger;
-use ExplainLint\Recorder\QueryPhase;
-use ExplainLint\Recorder\QueryRecorder;
-use ExplainLint\Report\ResultCollector;
-use ExplainLint\Report\TestOutcome;
-use ExplainLint\Rules\RuleEngine;
-use ExplainLint\Violation;
+use Jeytekdev\ExplainLint\Engine\ExplainRunner;
+use Jeytekdev\ExplainLint\Fingerprint\SqlFingerprint;
+use Jeytekdev\ExplainLint\Recorder\QueryLedger;
+use Jeytekdev\ExplainLint\Recorder\QueryPhase;
+use Jeytekdev\ExplainLint\Recorder\QueryRecorder;
+use Jeytekdev\ExplainLint\Report\ResultCollector;
+use Jeytekdev\ExplainLint\Report\TestOutcome;
+use Jeytekdev\ExplainLint\Rules\RuleEngine;
+use Jeytekdev\ExplainLint\Violation;
 
 /**
  * Shared drain-and-analyze logic used by the Finished/Failed/Errored

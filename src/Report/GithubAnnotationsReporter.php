@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Report;
+namespace Jeytekdev\ExplainLint\Report;
 
-use ExplainLint\Severity;
+use Jeytekdev\ExplainLint\Severity;
 
 /**
  * Emits GitHub Actions workflow-command annotations to stdout:

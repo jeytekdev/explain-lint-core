@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Tests\Unit\Rules;
+namespace Jeytekdev\ExplainLint\Tests\Unit\Rules;
 
-use ExplainLint\Adapter\PlanFinding;
-use ExplainLint\Config\Config;
-use ExplainLint\Engine\ExplainOutcome;
-use ExplainLint\ReasonCode;
-use ExplainLint\Recorder\CapturedQuery;
-use ExplainLint\Recorder\QueryPhase;
-use ExplainLint\Rules\RuleEngine;
-use ExplainLint\Severity;
+use Jeytekdev\ExplainLint\Adapter\PlanFinding;
+use Jeytekdev\ExplainLint\Config\Config;
+use Jeytekdev\ExplainLint\Engine\ExplainOutcome;
+use Jeytekdev\ExplainLint\ReasonCode;
+use Jeytekdev\ExplainLint\Recorder\CapturedQuery;
+use Jeytekdev\ExplainLint\Recorder\QueryPhase;
+use Jeytekdev\ExplainLint\Rules\RuleEngine;
+use Jeytekdev\ExplainLint\Severity;
 use PHPUnit\Framework\TestCase;
 
 final class RuleEngineTest extends TestCase
@@ -80,7 +80,7 @@ final class RuleEngineTest extends TestCase
     public function testAllowlistedFingerprintSuppressesEntireQuery(): void
     {
         $sql = 'SELECT * FROM events';
-        $fingerprint = \ExplainLint\Fingerprint\SqlFingerprint::hash($sql);
+        $fingerprint = \Jeytekdev\ExplainLint\Fingerprint\SqlFingerprint::hash($sql);
 
         $verdict = $this->evaluate(
             findings: [$this->finding('events', ReasonCode::FullTableScan, hasSelectivePredicate: false)],
@@ -162,7 +162,7 @@ final class RuleEngineTest extends TestCase
         array $ignoreQueries = [],
         string $mode = 'strict',
         string $sql = 'SELECT * FROM t',
-    ): \ExplainLint\Verdict {
+    ): \Jeytekdev\ExplainLint\Verdict {
         $config = Config::fromArray([
             'mode' => $mode,
             'connections' => [
@@ -183,7 +183,7 @@ final class RuleEngineTest extends TestCase
         $query = new CapturedQuery($sql, [], $this->pdo, 'default', QueryPhase::Test);
         $adapter = new FakeAdapter($findings);
         $outcome = ExplainOutcome::analyzed('mysql', $sql, $adapter, []);
-        $fingerprint = \ExplainLint\Fingerprint\SqlFingerprint::hash($sql);
+        $fingerprint = \Jeytekdev\ExplainLint\Fingerprint\SqlFingerprint::hash($sql);
 
         return $ruleEngine->evaluate($query, $outcome, $fingerprint);
     }

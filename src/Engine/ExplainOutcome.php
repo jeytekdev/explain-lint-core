@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Engine;
+namespace Jeytekdev\ExplainLint\Engine;
 
-use ExplainLint\Adapter\ExplainAdapter;
+use Jeytekdev\ExplainLint\Adapter\ExplainAdapter;
 
 /**
  * Result of running EXPLAIN for a captured query: either an adapter was

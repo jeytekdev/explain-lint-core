@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\PHPUnit;
+namespace Jeytekdev\ExplainLint\PHPUnit;
 
-use ExplainLint\Adapter\MySqlAdapter;
-use ExplainLint\Adapter\PostgresAdapter;
-use ExplainLint\Adapter\SqliteNoopAdapter;
-use ExplainLint\Config\Config;
-use ExplainLint\Config\ConfigLoader;
-use ExplainLint\Engine\ExplainRunner;
-use ExplainLint\Recorder\QueryLedger;
-use ExplainLint\Recorder\QueryRecorder;
-use ExplainLint\Report\ResultCollector;
-use ExplainLint\Rules\RuleEngine;
+use Jeytekdev\ExplainLint\Adapter\MySqlAdapter;
+use Jeytekdev\ExplainLint\Adapter\PostgresAdapter;
+use Jeytekdev\ExplainLint\Adapter\SqliteNoopAdapter;
+use Jeytekdev\ExplainLint\Config\Config;
+use Jeytekdev\ExplainLint\Config\ConfigLoader;
+use Jeytekdev\ExplainLint\Engine\ExplainRunner;
+use Jeytekdev\ExplainLint\Recorder\QueryLedger;
+use Jeytekdev\ExplainLint\Recorder\QueryRecorder;
+use Jeytekdev\ExplainLint\Report\ResultCollector;
+use Jeytekdev\ExplainLint\Rules\RuleEngine;
 use PHPUnit\Runner\Extension\Extension;
 use PHPUnit\Runner\Extension\Facade;
 use PHPUnit\Runner\Extension\ParameterCollection;
@@ -23,7 +23,7 @@ use PHPUnit\TextUI\Configuration\Configuration;
  * Register in phpunit.xml:
  *
  *   <extensions>
- *       <bootstrap class="ExplainLint\PHPUnit\ExplainLintExtension">
+ *       <bootstrap class="Jeytekdev\ExplainLint\PHPUnit\ExplainLintExtension">
  *           <parameter name="config" value="explain-lint.php"/>
  *       </bootstrap>
  *   </extensions>

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Adapter;
+namespace Jeytekdev\ExplainLint\Adapter;
 
-use ExplainLint\ReasonCode;
+use Jeytekdev\ExplainLint\ReasonCode;
 
 /**
  * Parses the classic tabular `EXPLAIN` output (type, possible_keys, key,

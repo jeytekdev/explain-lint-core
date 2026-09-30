@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Tests\Unit\Engine;
+namespace Jeytekdev\ExplainLint\Tests\Unit\Engine;
 
-use ExplainLint\Engine\BoundQueryRenderer;
+use Jeytekdev\ExplainLint\Engine\BoundQueryRenderer;
 use PHPUnit\Framework\TestCase;
 
 final class BoundQueryRendererTest extends TestCase

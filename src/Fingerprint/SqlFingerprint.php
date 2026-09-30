@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Fingerprint;
+namespace Jeytekdev\ExplainLint\Fingerprint;
 
 /**
  * Normalizes SQL into a canonical shape and hashes it, so that

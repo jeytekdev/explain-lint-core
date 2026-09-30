@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Recorder;
+namespace Jeytekdev\ExplainLint\Recorder;
 
 /**
  * Best-effort lookup of "which file triggered this query", used by
@@ -26,7 +26,7 @@ final class CallerLocator
                 continue;
             }
 
-            if (str_contains($file, '/explain-lint/') || str_contains($file, '\\ExplainLint\\')) {
+            if (str_contains($file, '/explain-lint/') || str_contains($file, '\\Jeytekdev\\ExplainLint\\')) {
                 continue;
             }
 

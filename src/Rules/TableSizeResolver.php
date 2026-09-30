@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Rules;
+namespace Jeytekdev\ExplainLint\Rules;
 
 /**
  * Approximate row counts per table, cached for the lifetime of the test

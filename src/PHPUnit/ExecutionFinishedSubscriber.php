@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\PHPUnit;
+namespace Jeytekdev\ExplainLint\PHPUnit;
 
-use ExplainLint\Config\Config;
-use ExplainLint\Report\ConsoleReporter;
-use ExplainLint\Report\GithubAnnotationsReporter;
-use ExplainLint\Report\JUnitReporter;
-use ExplainLint\Report\ResultCollector;
+use Jeytekdev\ExplainLint\Config\Config;
+use Jeytekdev\ExplainLint\Report\ConsoleReporter;
+use Jeytekdev\ExplainLint\Report\GithubAnnotationsReporter;
+use Jeytekdev\ExplainLint\Report\JUnitReporter;
+use Jeytekdev\ExplainLint\Report\ResultCollector;
 use PHPUnit\Event\TestRunner\ExecutionFinished;
 use PHPUnit\Event\TestRunner\ExecutionFinishedSubscriber as ExecutionFinishedSubscriberInterface;
 use Symfony\Component\Console\Output\ConsoleOutput;

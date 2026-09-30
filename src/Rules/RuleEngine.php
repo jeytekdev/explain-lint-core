@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Rules;
+namespace Jeytekdev\ExplainLint\Rules;
 
-use ExplainLint\Adapter\PlanFinding;
-use ExplainLint\Config\Config;
-use ExplainLint\Config\ConnectionConfig;
-use ExplainLint\Engine\ExplainOutcome;
-use ExplainLint\Fingerprint\SqlFingerprint;
-use ExplainLint\ReasonCode;
-use ExplainLint\Recorder\CapturedQuery;
-use ExplainLint\Verdict;
-use ExplainLint\Violation;
+use Jeytekdev\ExplainLint\Adapter\PlanFinding;
+use Jeytekdev\ExplainLint\Config\Config;
+use Jeytekdev\ExplainLint\Config\ConnectionConfig;
+use Jeytekdev\ExplainLint\Engine\ExplainOutcome;
+use Jeytekdev\ExplainLint\Fingerprint\SqlFingerprint;
+use Jeytekdev\ExplainLint\ReasonCode;
+use Jeytekdev\ExplainLint\Recorder\CapturedQuery;
+use Jeytekdev\ExplainLint\Verdict;
+use Jeytekdev\ExplainLint\Violation;
 
 /**
  * Turns raw adapter findings into a Verdict, applying the false-positive

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\PHPUnit;
+namespace Jeytekdev\ExplainLint\PHPUnit;
 
 use PHPUnit\Event\Test\Errored;
 use PHPUnit\Event\Test\ErroredSubscriber as ErroredSubscriberInterface;

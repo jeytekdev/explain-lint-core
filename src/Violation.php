@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint;
+namespace Jeytekdev\ExplainLint;
 
 /**
  * A single structural problem found in a query's EXPLAIN plan.

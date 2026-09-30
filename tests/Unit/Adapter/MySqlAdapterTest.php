@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Tests\Unit\Adapter;
+namespace Jeytekdev\ExplainLint\Tests\Unit\Adapter;
 
-use ExplainLint\Adapter\MySqlAdapter;
-use ExplainLint\ReasonCode;
+use Jeytekdev\ExplainLint\Adapter\MySqlAdapter;
+use Jeytekdev\ExplainLint\ReasonCode;
 use PHPUnit\Framework\TestCase;
 
 final class MySqlAdapterTest extends TestCase

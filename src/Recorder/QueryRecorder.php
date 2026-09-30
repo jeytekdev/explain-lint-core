@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Recorder;
+namespace Jeytekdev\ExplainLint\Recorder;
 
 /**
  * Process-wide buffer that every capture adapter (ExplainLintPdo, the

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Pdo;
+namespace Jeytekdev\ExplainLint\Pdo;
 
-use ExplainLint\Recorder\CallerLocator;
-use ExplainLint\Recorder\CapturedQuery;
-use ExplainLint\Recorder\QueryPhase;
-use ExplainLint\Recorder\QueryRecorder;
+use Jeytekdev\ExplainLint\Recorder\CallerLocator;
+use Jeytekdev\ExplainLint\Recorder\CapturedQuery;
+use Jeytekdev\ExplainLint\Recorder\QueryPhase;
+use Jeytekdev\ExplainLint\Recorder\QueryRecorder;
 
 /**
  * Drop-in PDO wrapper for framework-agnostic usage (plain PDO apps, or any

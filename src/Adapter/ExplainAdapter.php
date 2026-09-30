@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Adapter;
+namespace Jeytekdev\ExplainLint\Adapter;
 
 /**
  * One implementation per database engine. An adapter knows how to run a

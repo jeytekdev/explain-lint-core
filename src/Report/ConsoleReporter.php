@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Report;
+namespace Jeytekdev\ExplainLint\Report;
 
-use ExplainLint\Violation;
+use Jeytekdev\ExplainLint\Violation;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Terminal;
 

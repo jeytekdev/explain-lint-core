@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Config;
+namespace Jeytekdev\ExplainLint\Config;
 
-use ExplainLint\ReasonCode;
-use ExplainLint\Severity;
+use Jeytekdev\ExplainLint\ReasonCode;
+use Jeytekdev\ExplainLint\Severity;
 
 final class Config
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Report;
+namespace Jeytekdev\ExplainLint\Report;
 
 final class JUnitReporter
 {

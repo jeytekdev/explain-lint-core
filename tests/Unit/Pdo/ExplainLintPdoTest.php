@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Tests\Unit\Pdo;
+namespace Jeytekdev\ExplainLint\Tests\Unit\Pdo;
 
-use ExplainLint\Pdo\ExplainLintPdo;
-use ExplainLint\Recorder\QueryRecorder;
+use Jeytekdev\ExplainLint\Pdo\ExplainLintPdo;
+use Jeytekdev\ExplainLint\Recorder\QueryRecorder;
 use PHPUnit\Framework\TestCase;
 
 final class ExplainLintPdoTest extends TestCase

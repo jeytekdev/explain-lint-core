@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Tests\Unit\Console;
+namespace Jeytekdev\ExplainLint\Tests\Unit\Console;
 
-use ExplainLint\Console\InstallCommand;
+use Jeytekdev\ExplainLint\Console\InstallCommand;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
@@ -37,7 +37,7 @@ final class InstallCommandTest extends TestCase
 
         self::assertFileExists($this->projectDir . '/explain-lint.php');
         self::assertStringContainsString(
-            'ExplainLint\PHPUnit\ExplainLintExtension',
+            'Jeytekdev\ExplainLint\PHPUnit\ExplainLintExtension',
             (string) file_get_contents($this->projectDir . '/phpunit.xml')
         );
     }

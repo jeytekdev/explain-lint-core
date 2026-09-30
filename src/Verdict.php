@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint;
+namespace Jeytekdev\ExplainLint;
 
 /**
  * The outcome of running one captured query through the RuleEngine.

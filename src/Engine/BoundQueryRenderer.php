@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Engine;
+namespace Jeytekdev\ExplainLint\Engine;
 
 /**
  * Substitutes bound parameters back into SQL text so EXPLAIN receives a

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Config;
+namespace Jeytekdev\ExplainLint\Config;
 
 final class ConnectionConfig
 {

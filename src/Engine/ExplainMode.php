@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Engine;
+namespace Jeytekdev\ExplainLint\Engine;
 
 /**
  * `Plan` runs a bare EXPLAIN — side-effect-free even for UPDATE/DELETE/INSERT,

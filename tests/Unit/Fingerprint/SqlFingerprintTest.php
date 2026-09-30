@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Tests\Unit\Fingerprint;
+namespace Jeytekdev\ExplainLint\Tests\Unit\Fingerprint;
 
-use ExplainLint\Fingerprint\SqlFingerprint;
+use Jeytekdev\ExplainLint\Fingerprint\SqlFingerprint;
 use PHPUnit\Framework\TestCase;
 
 final class SqlFingerprintTest extends TestCase

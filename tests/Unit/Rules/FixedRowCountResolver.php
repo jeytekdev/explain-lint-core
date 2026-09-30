@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Tests\Unit\Rules;
+namespace Jeytekdev\ExplainLint\Tests\Unit\Rules;
 
-use ExplainLint\Rules\RowCountResolver;
+use Jeytekdev\ExplainLint\Rules\RowCountResolver;
 
 final class FixedRowCountResolver implements RowCountResolver
 {

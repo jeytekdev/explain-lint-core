@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\PHPUnit;
+namespace Jeytekdev\ExplainLint\PHPUnit;
 
 /**
  * PHPUnit's Event\Code\Test value objects went through small renames

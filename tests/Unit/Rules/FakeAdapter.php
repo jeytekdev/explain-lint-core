@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Tests\Unit\Rules;
+namespace Jeytekdev\ExplainLint\Tests\Unit\Rules;
 
-use ExplainLint\Adapter\ExplainAdapter;
-use ExplainLint\Adapter\PlanFinding;
+use Jeytekdev\ExplainLint\Adapter\ExplainAdapter;
+use Jeytekdev\ExplainLint\Adapter\PlanFinding;
 
 final class FakeAdapter implements ExplainAdapter
 {

@@ -34,16 +34,16 @@
         "phpunit/phpunit": "^10.5 || ^11.0"
     },
     "suggest": {
-        "phpunit/phpunit": "Required to use the ExplainLintExtension PHPUnit/Pest integration (^10.5 || ^11.0)."
+        "phpunit/phpunit": "Required to use the Jeytekdev\\ExplainLint\\PHPUnit\\ExplainLintExtension PHPUnit/Pest integration (^10.5 || ^11.0)."
     },
     "autoload": {
         "psr-4": {
-            "ExplainLint\\": "src/"
+            "Jeytekdev\\ExplainLint\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ExplainLint\\Tests\\": "tests/"
+            "Jeytekdev\\ExplainLint\\Tests\\": "tests/"
         }
     },
     "bin": [
@@ -56,7 +56,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.x-dev"
+            "dev-master": "2.x-dev"
         }
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Console;
+namespace Jeytekdev\ExplainLint\Console;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -73,7 +73,7 @@ final class InstallCommand extends Command
         $existing = $root->getElementsByTagName('extensions')->item(0);
         if ($existing !== null) {
             foreach ($existing->getElementsByTagName('bootstrap') as $bootstrap) {
-                if ($bootstrap->getAttribute('class') === 'ExplainLint\PHPUnit\ExplainLintExtension') {
+                if ($bootstrap->getAttribute('class') === 'Jeytekdev\ExplainLint\PHPUnit\ExplainLintExtension') {
                     $output->writeln('<comment>ExplainLintExtension is already registered in ' . $phpunitConfigPath . '.</comment>');
 
                     return;
@@ -86,7 +86,7 @@ final class InstallCommand extends Command
         }
 
         $bootstrap = $document->createElement('bootstrap');
-        $bootstrap->setAttribute('class', 'ExplainLint\PHPUnit\ExplainLintExtension');
+        $bootstrap->setAttribute('class', 'Jeytekdev\ExplainLint\PHPUnit\ExplainLintExtension');
         $parameter = $document->createElement('parameter');
         $parameter->setAttribute('name', 'config');
         $parameter->setAttribute('value', 'explain-lint.php');
