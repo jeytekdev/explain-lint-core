@@ -56,6 +56,8 @@ vendor/bin/explain-lint explain-lint:install
 
 This works for [Pest](https://pestphp.com) too, with zero extra glue — Pest runs on the same PHPUnit event bus.
 
+Running your suite via `vendor/bin/codecept run` instead? Codeception 5 never bootstraps the `<extensions>` mechanism above, so this registration is a no-op there — install [`jeytekdev/explain-lint-codeception`](../codeception/README.md) instead and register it in `codeception.yml`.
+
 ## Configuration
 
 `explain-lint.php` in your project root:
@@ -127,6 +129,8 @@ vendor/bin/explain-lint explain-lint:check                   # reads the last JU
 - run: vendor/bin/phpunit
 - run: vendor/bin/explain-lint explain-lint:check
 ```
+
+Running your suite via `vendor/bin/codecept run` instead of `vendor/bin/phpunit`/`pest`? The extension above is never invoked — Codeception 5 doesn't bootstrap PHPUnit's native extension mechanism. See [`jeytekdev/explain-lint-codeception`](../codeception/README.md).
 
 ## Scope of this release
 
